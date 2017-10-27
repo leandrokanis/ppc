@@ -1,12 +1,20 @@
+file = e
+
 all:
 	clear
-	g++ 1003.cpp -o a.out -std=c++11 -lm -Wall -O2
+	g++ $(file).cpp -o app.out -std=c++11 -lm -Wall -O2
 	clear
-	cat input.txt | ./a.out
+	cat input.txt | ./app.out
+init:
+	clear
+	touch $(file).cpp output.txt ans.txt input.txt
 diff:
 	clear
-	g++ 1003.cpp -o a.out -std=c++11 -lm -Wall -O2
+	g++ $(file).cpp -o app.out -std=c++11 -lm -Wall -O2
 	clear
-	cat input.txt | ./a.out > output.txt
+	cat input.txt | ./app.out > output.txt
 	clear
 	diff output.txt ans.txt
+clean:
+	clear
+	rm output.txt ans.txt app.out input.txt
