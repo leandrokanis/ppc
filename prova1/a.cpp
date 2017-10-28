@@ -11,7 +11,8 @@ using namespace std;
 #define SORT(x)     sort(ALL(x))
 #define DREP(x)     sort(ALL(x)); x.erase(unique(ALL(x)),x.end())
 #define CLEAR(c)    memset(c, 0, sizeof(c))
-#define debug(x)    cout << ">>> " << #x << ": " << x << endl
+#define P(x)        ">>> " << #x << ": " << x << endl
+#define C(x)        cout << P(x)
 #define CC(x)       clog << P(x)
 
 struct _ { ios_base::Init i; _() { cin.sync_with_stdio(0); cin.tie(0); } } _;

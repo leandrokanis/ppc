@@ -11,7 +11,8 @@ using namespace std;
 #define SORT(x)     sort(ALL(x))
 #define DREP(x)     sort(ALL(x)); x.erase(unique(ALL(x)),x.end())
 #define CLEAR(c)    memset(c, 0, sizeof(c))
-#define debug(x)    cout << ">>> " << #x << ": " << x << endl
+#define P(x)        ">>> " << #x << ": " << x << endl
+#define debug(x)        cout << P(x)
 #define CC(x)       clog << P(x)
 
 struct _ { ios_base::Init i; _() { cin.sync_with_stdio(0); cin.tie(0); } } _;
@@ -30,5 +31,31 @@ typedef vector<ii> vii;
 #define PI atan(1)*4;
 
 int main() {
+  vi agenda_aluno, agenda_professor;
+  int h=0,m=0;
 
+  int numa=0;
+  scanf("%d", &numa);
+  while (numa--){
+    scanf("%d:%d", &h, &m);
+    agenda_aluno.push_back((h*60) +m);
+  }
+
+  int numb=0;
+  scanf("%d", &numb);
+  while (numb--){
+    scanf("%d:%d", &h, &m);
+    agenda_professor.push_back((h*60) +m);
+  }
+
+  int min=9999;
+  for(vi::iterator i = agenda_aluno.begin(); i!=agenda_aluno.end(); ++i){
+    for(vi::iterator j = agenda_professor.begin(); j!=agenda_professor.end(); ++j){
+      if(abs(*i-*j) < min ){
+        min = abs(*i-*j);
+      }
+    }
+  }
+
+  cout << min << " minutos." << endl;
 }
