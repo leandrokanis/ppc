@@ -1,4 +1,4 @@
-file = a
+file = dfs
 
 all:
 	clear
@@ -6,7 +6,7 @@ all:
 	cat input.txt | ./$(file).out
 init:
 	touch output.txt ans.txt input.txt
-	cp ../template.cpp $(file).cpp | clear
+	cp ../../template.cpp $(file).cpp | clear
 	ls
 diff:
 	clear
